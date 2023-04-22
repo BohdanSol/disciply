@@ -1,0 +1,10 @@
+<h1>Forgot your password?<h1>
+
+<%= form_with url: password_reset_path, data: { turbo: false } do |form| %>
+  <div class="flex-center">
+    <div class="max-md">
+      <%= form.email_field :email, placeholder: "Enter email" %>
+      <%= form.submit "Reset password" %>
+    </div>
+  </div>
+<% end %>

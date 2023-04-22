@@ -1,0 +1,9 @@
+<h1>Hi <%= params[:user].email %></h1>
+
+<p>
+  Click following link if you would like to reset your password on Disciplify.
+</p>
+
+<p>
+  <%= link_to "Reset password", password_reset_edit_url(token: @token) %>
+</p>

@@ -13,6 +13,7 @@
       <% end %>
       <%= form.email_field :email, placeholder: "Enter email" %>
       <%= form.password_field :password, placeholder: "Enter passsword" %>
+      <%= link_to "Forgot your password?", password_reset_path, class: "default-link-to" %>
       <%= form.submit "Log in" %>
     </div>
   </div>
