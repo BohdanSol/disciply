@@ -1,0 +1,19 @@
+<h1>Log in<h1>
+
+<%= form_with model: @user, url: sign_in_path, data: { turbo: false } do |form| %>
+  <div class="flex-center">
+    <div class="max-md">
+      <% if @user&.errors&.any? %>
+        <div class="alert alert-danger" role="alert">
+          <% @user.errors.full_messages.each do |message| %>
+            <%= message %>
+            <br>
+          <% end %>
+        </div>
+      <% end %>
+      <%= form.email_field :email, placeholder: "Enter email" %>
+      <%= form.password_field :password, placeholder: "Enter passsword" %>
+      <%= form.submit "Log in" %>
+    </div>
+  </div>
+<% end %>

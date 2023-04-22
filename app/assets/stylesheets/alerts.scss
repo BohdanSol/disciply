@@ -17,12 +17,12 @@ $red-900: #b71c1c !default;
 // simple picocss alerts
 // inherit responsive typography, responsive spacing, icons and size
 .alert {
-  $iconsize: calc(var(--font-size) * 1.5); // 24px / 30px if $enable-responsive-spacings
+  $iconsize: 30px; // 24px / 30px if $enable-responsive-spacings
   margin-bottom: var(--spacing); // some default space below alert element
   padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal); // same as forms .input
   border-radius: var(--border-radius);
   //font-weight: 500; // var(--font-weight);
-  //font-size: 1rem;
+  font-size: 14px;
   //line-height: var(--line-height);
   color: var(--color);
   background-color: var(--background-color);
