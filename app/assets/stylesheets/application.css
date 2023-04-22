@@ -14,6 +14,8 @@
  *= require_self
  */
 
+@import "./alert";
+
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
     --primary: #43a047;
