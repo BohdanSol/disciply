@@ -5,7 +5,7 @@
   </ul>
   <% if Current.user %>
     <ul>
-      <li><small><%= Current.user.email %></small></li>
+      <li><small><%= link_to Current.user.email, change_password_path %></small></li>
       <li><small><%= button_to "Log out", logout_path, method: :delete, class: "button_link" %></small></li>
     </ul>
   <% else %>

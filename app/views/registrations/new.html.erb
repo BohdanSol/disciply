@@ -3,9 +3,9 @@
 <%= form_with model: @user, url: sign_up_path, data: { turbo: false } do |form| %>
   <div class="flex-center">
     <div class="max-md">
-      <% if @user.errors.any? %>
+      <% if form.object.errors.any? %>
         <div class="alert alert-danger" role="alert">
-          <% @user.errors.full_messages.each do |message| %>
+          <% form.object.errors.full_messages.each do |message| %>
             <%= message %>
             <br>
           <% end %>

@@ -1,0 +1,19 @@
+<h1>Change Password<h1>
+
+<%= form_with model: Current.user, url: change_password_path, data: { turbo: false } do |form| %>
+  <div class="flex-center">
+    <div class="max-md">
+      <% if form.object.errors.any? %>
+        <div class="alert alert-danger" role="alert">
+          <% form.object.errors.full_messages.each do |message| %>
+            <%= message %>
+            <br>
+          <% end %>
+        </div>
+      <% end %>
+      <%= form.password_field :password, placeholder: "Enter new passsword" %>
+      <%= form.password_field :password_confirmation, placeholder: "Confirm your new password" %>
+      <%= form.submit "Update password" %>
+    </div>
+  </div>
+<% end %>
