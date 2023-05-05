@@ -1,5 +1,5 @@
-<h1>Main<h1>
-
-<% if @user %>
-  Logged in as <%= @user.email %>
+<% if Current.user %>
+  <h3>Hello, <%= Current.user.email %><h1>
+<% else %>
+  <h3>You are not logged in<h1>
 <% end %>
