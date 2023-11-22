@@ -1,0 +1,7 @@
+<h1><%= Brand.find_by(id: @car.brand).name %> <%= Model.find_by(id: @car.model).name %></h1>
+
+<p>Year: <%= @car.year %></p>
+<p>Range: <%= @car.range %> miles</p>
+<p>Description: <%= @car.description %></p>
+
+<%= image_tag @car.photo.url if @car.photo.present? %>

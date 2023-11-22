@@ -8,7 +8,7 @@ $red-50: #ffebee !default;
 $red-900: #b71c1c !default;
 
 .flash-container {
-  position: absolute;
+  position: sticky;
   bottom: 36px;
   width: 100vw;
   background-color: transparent;

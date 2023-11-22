@@ -1,0 +1,39 @@
+<h1>Add a New Car</h1>
+
+<%= form_for @car, html: { multipart: true } do |f| %>
+  <%= f.collection_select :brand, @brands, :id, :name, prompt: 'Select Brand' %>
+  <%= f.collection_select :model, @models, :id, :name, prompt: 'Select Model' %>
+  <%= f.number_field :year, placeholder: "Year" %>
+  <%= f.number_field :range, placeholder: "Range (km)" %>
+  <%= f.text_area :description, placeholder: "Add description of the car" %>
+
+  <%= f.label :photo %><br>
+  <%= f.file_field :photo %>
+
+  <%= f.submit %>
+<% end %>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const brandsSelect = document.getElementById('car_brand');
+    const modelsSelect = document.getElementById('car_model');
+
+    brandsSelect.addEventListener('change', function () {
+      fetch(`/models_for_brand/${this.value}`)
+        .then(response => {
+          console.log('response', response);
+          return response.json()
+        })
+        .then(data => {
+          modelsSelect.innerHTML = '<option value="">Select Model</option>';
+          
+          data.forEach(model => {
+            const option = document.createElement('option');
+            option.value = model.id;
+            option.text = model.name;
+            modelsSelect.appendChild(option);
+          });
+        });
+    });
+  });
+</script>

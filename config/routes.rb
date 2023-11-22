@@ -19,5 +19,8 @@ Rails.application.routes.draw do
   get 'about', to: 'about#index'
   get 'log_day', to: 'log_day#new'
 
+  resources :cars, only: %i[new create show]
+  get '/models_for_brand/:brand', to: 'cars#models_for_brand'
+
   root 'main#index'
 end

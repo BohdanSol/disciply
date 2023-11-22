@@ -1,1 +1,24 @@
-<h1>About us</h1>
+<h1>Our Cars</h1>
+
+<div class="car-list">
+  <% @cars.each do |car| %>
+    <div class="car">
+      <%= link_to car_path(car) do %>
+        <% if car.photo.present? %>
+          <%= image_tag car.photo.url %>
+        <% else %>
+          <div class="placeholder-image"></div>
+        <% end %>
+        <div class="car-details">
+          <h3><%= Brand.find_by(id: car.brand).name %> <%= Model.find_by(id: car.model).name %></h3>
+          <p><strong>Make:</strong> <%= car.brand %></p>
+          <p><strong>Model:</strong> <%= car.model %></p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<div class="pagination-container">
+  <%= paginate @cars %>
+</div>
