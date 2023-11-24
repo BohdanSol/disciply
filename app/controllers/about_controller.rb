@@ -5,6 +5,6 @@ class AboutController < ApplicationController
     ActiveStorage::Current.url_options = {
       host: request.base_url
     }
-    @cars = Car.page(params[:page]).per(5)
+    @cars = Car.page(params[:page]).per(5).order('created_at DESC')
   end
 end

@@ -1,6 +1,7 @@
-require_relative "boot"
+require_relative 'boot'
 
-require "rails/all"
+require 'rails/all'
+require 'active_storage/engine'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -10,6 +11,11 @@ module Disciply
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    config.active_storage.silence_invalid_content_types_warning = true
+
+    config.generators do |g|
+      g.test_framework :rspec
+    end
 
     # Configuration for the application, engines, and railties goes here.
     #

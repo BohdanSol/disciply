@@ -20,8 +20,8 @@ class CarsController < ApplicationController
       flash[:success] = 'Car created successfully!'
       redirect_to @car
     else
-      render :new
-      flash[:success] = 'Oops... Something went wrong!'
+      redirect_to new_car_path
+      flash[:error] = 'Oops... Something went wrong!'
     end
   end
 

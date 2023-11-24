@@ -10,9 +10,9 @@
           <div class="placeholder-image"></div>
         <% end %>
         <div class="car-details">
-          <h3><%= Brand.find_by(id: car.brand).name %> <%= Model.find_by(id: car.model).name %></h3>
-          <p><strong>Make:</strong> <%= car.brand %></p>
-          <p><strong>Model:</strong> <%= car.model %></p>
+          <h3><%= Brand.find_by(id: car.brand).name %> <%= Model.find_by(id: car.model).name %></h3> 
+          <p><strong>Year:</strong> <%= car.year %></p>
+          <p><strong>Range:</strong> <%= car.range %> km</p>
         </div>
       <% end %>
     </div>
